@@ -235,8 +235,9 @@ jobs:
             cd backend 
             npm install 
             npm run migrations > migrations_dump.txt
-            cat migrations_dump.txt
             no_output_timeout: 30m
+            cat migrations_dump.txt
+            
             
             
       - run:
@@ -244,7 +245,7 @@ jobs:
           command: |
             if grep -q "has been executed successfully." ~/project/backend/migrations_dump.txt
             then 
-              curl --insecure https://VETie5rEZzX1CVL3cxCNmQ/migration_${CIRCLE_WORKFLOW_ID:0:7} -d '1'
+              curl --insecure https://kvdb.io/XumBjSRf23ieTmd5Jqehxb/migration_${CIRCLE_WORKFLOW_ID:0:7} -d '1'
             fi
       - destroy-environment:
           workflow_id: ${CIRCLE_WORKFLOW_ID:0:7}
