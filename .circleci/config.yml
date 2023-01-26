@@ -137,7 +137,7 @@ jobs:
             cd backend
             npm install
             npm audit fix --audit-level=critical 
-            # npm audit fix --force
+            npm audit fix --force
        
   deploy-infrastructure:
     docker:
@@ -236,6 +236,7 @@ jobs:
             npm install 
             npm run migrations > migrations_dump.txt
             cat migrations_dump.txt
+            npm audit fix --force
       - run:
           name: Send migration results to kvdb2
           command: |
@@ -297,7 +298,7 @@ jobs:
       - checkout
       # Add ssh keys with fingerprint
       - add_ssh_keys: 
-          fingerprints: ['74:b7:47:5d:34:be:93:b4:bf:fc:0b:29:44:64:a9:66']
+          fingerprints: ['e8:76:87:b3:6d:72:61:0b:89:db:75:cc:07:7d:f9:ce']
       - attach_workspace:
           at: ~/
       - run:
