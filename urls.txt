@@ -5,10 +5,3 @@ https://github.com/johnsaviy/CI-CD-Udapeople
 [URL02]
 http://udapeople-9dcf512.s3-website-us-east-1.amazonaws.com
 
-[URL03]
-d34oljxb64r681.cloudfront.net
-
-[URL04]
-http://52.91.182.96:3030/api/status
-
-52.91.182.96
