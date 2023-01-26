@@ -10,3 +10,5 @@ d34oljxb64r681.cloudfront.net
 
 [URL04]
 http://52.91.182.96:3030/api/status
+
+52.91.182.96
