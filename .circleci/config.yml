@@ -122,7 +122,7 @@ jobs:
             cd frontend
             npm install
             npm install webpack
-            npm audit fix --audit-level=critical --force
+            npm audit fix --audit-level=critical 
     
   scan-backend:
     docker:
@@ -136,8 +136,8 @@ jobs:
           command: |        
             cd backend
             npm install
-            npm audit fix --audit-level=critical --force
-            npm audit fix --force
+            npm audit fix --audit-level=critical 
+            # npm audit fix --force
        
   deploy-infrastructure:
     docker:
@@ -454,10 +454,10 @@ workflows:
           requires: [build-frontend]
       - test-backend:
           requires: [build-backend]
-      # - scan-backend:
-      #     requires: [build-backend]
-      # - scan-frontend:
-      #     requires: [build-frontend]    
+      - scan-backend:
+          requires: [build-backend]
+      - scan-frontend:
+          requires: [build-frontend]    
       # - deploy-infrastructure:
       #     requires: [test-frontend, test-backend, scan-frontend, scan-backend]
       #     filters:
