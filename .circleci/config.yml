@@ -182,7 +182,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: ['74:b7:47:5d:34:be:93:b4:bf:fc:0b:29:44:64:a9:66']
+          fingerprints: ['e8:76:87:b3:6d:72:61:0b:89:db:75:cc:07:7d:f9:ce']
       - attach_workspace:
           at: ~/
       - restore_cache:
@@ -241,7 +241,7 @@ jobs:
           command: |
             if grep -q "has been executed successfully." ~/project/backend/migrations_dump.txt
             then 
-              curl --insecure https://kvdb.io/XumBjSRf23ieTmd5Jqehxb/migration_${CIRCLE_WORKFLOW_ID:0:7} -d '1'
+              curl --insecure https://kvdb.io/GW8PKRiB2o8VcZ1sV4B2SE/migration_${CIRCLE_WORKFLOW_ID:0:7} -d '1'
             fi
       - destroy-environment:
           workflow_id: ${CIRCLE_WORKFLOW_ID:0:7}
@@ -425,7 +425,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys: 
-          fingerprints: ['74:b7:47:5d:34:be:93:b4:bf:fc:0b:29:44:64:a9:66']    
+          fingerprints: ['e8:76:87:b3:6d:72:61:0b:89:db:75:cc:07:7d:f9:ce']    
       - restore_cache:
           keys: [backend-build]    
       - attach_workspace:
